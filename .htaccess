@@ -1,0 +1,12 @@
+php_flag  log_errors on
+#php_value error_log  /var/www/html/youthexperience.com.br/web/logs/php_errors_log.txt
+
+php_value error_log  C:/xampp/htdocs/yexcontrol/logs/php_errors_log.txt
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
